@@ -3,20 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MorningClassASPRazorPages.Pages
-{ 
-    [Authorize]
-    public class IndexModel : PageModel
+{
+    [Authorize(Policy = "MustBelongToHRDepartment")]
+    public class HumanResourcesModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
         public void OnGet()
         {
-
         }
     }
 }
